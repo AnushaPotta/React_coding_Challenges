@@ -9,7 +9,11 @@ export default function Home() {
         cols="20"
         value={text}
         placeholder="Enter your text..."
-        onChange={(e) => setText(e.target.value)}
+        onChange={(e) => {
+          if (e.target.value.length <= 200) {
+            setText(e.target.value);
+          }
+        }}
       ></textarea>
       <div>Character count: {text.length}</div>
 
